@@ -22,7 +22,9 @@ void main_menu();
 
 void main()
 {
-    setlocale(LC_ALL, "");
+    //setlocale(LC_ALL, "");
+    SetConsoleCP(1251);
+    SetConsoleOutputCP(1251);
     base_list GaiMap;
 
     read_from_file(GaiMap);
@@ -46,7 +48,7 @@ void main()
             break;
         case 4:
             cin.ignore();
-            cout << "Number for search: ";
+            cout << "Номер для поиска: ";
             getline(cin, car_num);
             list_for_number(GaiMap, car_num);
             break;
@@ -138,21 +140,22 @@ void save_file(base_list& GaiMap)
 }
 void main_menu()
 {
-    cout << "DataBase\n";
-    cout << "Please make your selection\n";
-    cout << "1 - List all\n";
-    cout << "2 - Add record\n";
-    cout << "3 - Partial list\n";
-    cout << "4 - List for number\n";
-    cout << "5 - Quit\n";
-    cout << "Selection: ";
+    cout << "\nБаза данных\n";
+    cout << "-----------\n";
+    cout << "Выберите один из пунктов\n";
+    cout << "1 - Вывести весь список\n";
+    cout << "2 - Добавить запись\n";
+    cout << "3 - Частичный вывод (с..по)\n";
+    cout << "4 - Вывод по номеру\n";
+    cout << "5 - Выход\n";
+    cout << "Выбранное значение: ";
 }
 void list_for_number(base_list& GaiMap, std::string number)
 {
     auto it = GaiMap.find(number);
     if (it == GaiMap.end())
     {
-        cout << "The number is clean!. Good driver :)";
+        cout << "Номер \"чист\". Отличный водитель :)" << endl;
     }
     else
     {
