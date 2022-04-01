@@ -1,0 +1,4 @@
+﻿Build started...
+1>------ Build started: Project: Police, Configuration: Debug Win32 ------
+1>Police.vcxproj -> C:\Users\Eugene\source\repos\STL\Debug\Police.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
