@@ -1,4 +1,4 @@
-#include<iostream>
+ï»¿#include<iostream>
 #include<map>
 #include<string>
 #include<fstream>
@@ -48,7 +48,7 @@ void main()
             break;
         case 4:
             cin.ignore();
-            cout << "Íîìåð äëÿ ïîèñêà: ";
+            cout << "ÐÐ¾Ð¼ÐµÑ€ Ð´Ð»Ñ Ð¿Ð¾Ð¸ÑÐºÐ°: ";
             getline(cin, car_num);
             list_for_number(GaiMap, car_num);
             break;
@@ -76,7 +76,7 @@ void add_to_tree(base_list& GaiMap, std::string numbera, std::string hhhh)
 }
 void list_all(base_list& GaiMap)
 {
-    cout << "Íîìåð" << "\t\t" << "Íàðóøåíèÿ";
+    cout << "ÐÐ¾Ð¼ÐµÑ€" << "\t\t" << "ÐÐ°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ";
     cout << "\n----------------------------\n";
     for (auto p : GaiMap)
     {
@@ -112,12 +112,12 @@ void add_record(base_list& GaiMap)
 {
     std::string number;
     cin.ignore();
-    cout << "Ââåäèòå íîìåð ìàøèíû: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð¾Ð¼ÐµÑ€ Ð¼Ð°ÑˆÐ¸Ð½Ñ‹: ";
     getline(cin, number);
 
     std::string hhhh;
     cin.ignore();
-    cout << "Ââåäèòå íàðóøåíèå: ";
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ðµ: ";
     getline(cin, hhhh);
 
     add_to_tree(GaiMap, number, hhhh);
@@ -140,27 +140,27 @@ void save_file(base_list& GaiMap)
 }
 void main_menu()
 {
-    cout << "\nÁàçà äàííûõ\n";
+    cout << "\nÐ‘Ð°Ð·Ð° Ð´Ð°Ð½Ð½Ñ‹Ñ…\n";
     cout << "-----------\n";
-    cout << "Âûáåðèòå îäèí èç ïóíêòîâ\n";
-    cout << "1 - Âûâåñòè âåñü ñïèñîê\n";
-    cout << "2 - Äîáàâèòü çàïèñü\n";
-    cout << "3 - ×àñòè÷íûé âûâîä (ñ..ïî)\n";
-    cout << "4 - Âûâîä ïî íîìåðó\n";
-    cout << "5 - Âûõîä\n";
-    cout << "Âûáðàííîå çíà÷åíèå: ";
+    cout << "Ð’Ñ‹Ð±ÐµÑ€Ð¸Ñ‚Ðµ Ð¾Ð´Ð¸Ð½ Ð¸Ð· Ð¿ÑƒÐ½ÐºÑ‚Ð¾Ð²\n";
+    cout << "1 - Ð’Ñ‹Ð²ÐµÑÑ‚Ð¸ Ð²ÐµÑÑŒ ÑÐ¿Ð¸ÑÐ¾Ðº\n";
+    cout << "2 - Ð”Ð¾Ð±Ð°Ð²Ð¸Ñ‚ÑŒ Ð·Ð°Ð¿Ð¸ÑÑŒ\n";
+    cout << "3 - Ð§Ð°ÑÑ‚Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð²Ñ‹Ð²Ð¾Ð´ (Ñ..Ð¿Ð¾)\n";
+    cout << "4 - Ð’Ñ‹Ð²Ð¾Ð´ Ð¿Ð¾ Ð½Ð¾Ð¼ÐµÑ€Ñƒ\n";
+    cout << "5 - Ð’Ñ‹Ñ…Ð¾Ð´\n";
+    cout << "Ð’Ñ‹Ð±Ñ€Ð°Ð½Ð½Ð¾Ðµ Ð·Ð½Ð°Ñ‡ÐµÐ½Ð¸Ðµ: ";
 }
 void list_for_number(base_list& GaiMap, std::string number)
 {
     auto it = GaiMap.find(number);
     if (it == GaiMap.end())
     {
-        cout << "Íîìåð \"÷èñò\". Îòëè÷íûé âîäèòåëü :)" << endl;
+        cout << "ÐÐ¾Ð¼ÐµÑ€ \"Ñ‡Ð¸ÑÑ‚\". ÐžÑ‚Ð»Ð¸Ñ‡Ð½Ñ‹Ð¹ Ð²Ð¾Ð´Ð¸Ñ‚ÐµÐ»ÑŒ :)" << endl;
     }
     else
     {
         list<std::string> get = it->second;
-        cout << "Ñïèñîê íàðóøåíèé ïî íîìåðó " << number << endl << endl;
+        cout << "Ð¡Ð¿Ð¸ÑÐ¾Ðº Ð½Ð°Ñ€ÑƒÑˆÐµÐ½Ð¸Ð¹ Ð¿Ð¾ Ð½Ð¾Ð¼ÐµÑ€Ñƒ " << number << endl << endl;
         int count = 0;
         for (auto i = get.begin(); i != get.end(); ++i)
             cout << (++count) << ". " << *i << endl;
@@ -173,13 +173,13 @@ void partial_list(base_list& GaiMap)
     base_list::iterator itlow, itupper;
 
     cin.ignore();
-    cout << "Ââåäèòå íà÷àëüíûé íîìåð äëÿ âûâîäà: "; getline(cin, str_itlow);
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ Ð½Ð°Ñ‡Ð°Ð»ÑŒÐ½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð´Ð»Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð°: "; getline(cin, str_itlow);
     itlow = GaiMap.lower_bound(str_itlow);
     cin.ignore();
-    cout << "Ââåäèòå êîíå÷íûé íîìåð äëÿ âûâîäà: "; getline(cin, str_itupper);
+    cout << "Ð’Ð²ÐµÐ´Ð¸Ñ‚Ðµ ÐºÐ¾Ð½ÐµÑ‡Ð½Ñ‹Ð¹ Ð½Ð¾Ð¼ÐµÑ€ Ð´Ð»Ñ Ð²Ñ‹Ð²Ð¾Ð´Ð°: "; getline(cin, str_itupper);
     itupper = GaiMap.upper_bound(str_itupper);
 
-    cout << "Íîìåð" << "\t\t" << "Íàðóøåíèÿ";
+    cout << "ÐÐ¾Ð¼ÐµÑ€" << "\t\t" << "ÐÐ°Ñ€ÑƒÑˆÐµÐ½Ð¸Ñ";
     cout << "\n----------------------------\n";
 
     for (base_list::iterator car_it = itlow; car_it != itupper; car_it++)
